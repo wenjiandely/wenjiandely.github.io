@@ -1,0 +1,61 @@
+/* 自定义样式：只放覆盖项，主题本身不要改 */
+
+/* 正文中文字号稍微放大，长文更易读 */
+.post-content {
+    font-size: 17px;
+    line-height: 1.85;
+}
+
+/* 代码块圆角 */
+.post-content pre {
+    border-radius: 8px;
+}
+
+/* A native emoji is the only content in the homepage profile. */
+.pear-avatar {
+    display: block;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+    font-size: 112px;
+    line-height: 1.2;
+    user-select: none;
+}
+
+/* Publication links remain independent of the card body. */
+.publication-venue {
+    color: var(--secondary);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+.publication-entry .entry-content {
+    display: block;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    line-height: 1.7;
+}
+.publication-entry h2 a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+.publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    margin-top: 18px;
+    font-size: 14px;
+}
+.publication-links a {
+    box-shadow: 0 1px var(--secondary);
+}
+
+/* Keep repository links clickable above the project card's overlay. */
+.project-source {
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+    margin-top: 12px;
+    font-size: 14px;
+}
+.project-source a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}

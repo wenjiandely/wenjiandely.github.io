@@ -1,0 +1,20 @@
+{{- define "main" }}
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- with .Description }}<div class="post-description">{{ . }}</div>{{- end }}
+</header>
+{{- range .RegularPages.ByDate.Reverse }}
+<article class="post-entry publication-entry">
+  <div class="publication-venue">{{ .Params.venue }}</div>
+  <header class="entry-header">
+    <h2><a href="{{ .Params.publicationURL }}" target="_blank" rel="noopener noreferrer">{{ .Title }}</a></h2>
+  </header>
+  <div class="entry-content"><p>{{ .Summary | plainify }}</p></div>
+  <footer class="publication-links">
+    <a href="{{ .Params.publicationURL }}" target="_blank" rel="noopener noreferrer">Springer ↗</a>
+    <a href="{{ .RelPermalink }}">{{ if eq $.Lang "zh" }}研究简介{{ else }}Research summary{{ end }}</a>
+  </footer>
+</article>
+{{- end }}
+{{- end }}
